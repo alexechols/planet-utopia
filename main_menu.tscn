@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkvsawmnwdp7y"]
+
+[ext_resource type="Texture2D" uid="uid://ip0nx4fu2nkt" path="res://assets/CastleOnTheMountains-Valrok.png" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://dvlehcfqbkegb" path="res://main_menu.gd" id="1_jix8l"]
+[ext_resource type="Texture2D" uid="uid://cyearbkgpwwac" path="res://assets/110-1108890_start-button-game-start-button-png-3106732159.png" id="3_glbon"]
+[ext_resource type="PackedScene" uid="uid://dwgrxq8dm538y" path="res://intro_cutscene.tscn" id="4_nlkkf"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jix8l")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_7vrkn")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 208.0
+offset_right = 1003.0
+offset_bottom = 467.0
+texture_normal = ExtResource("3_glbon")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="IntroCutscene" parent="." instance=ExtResource("4_nlkkf")]
+visible = false
+z_index = 10
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="completed" from="IntroCutscene" to="." method="_on_intro_cutscene_completed"]
+[connection signal="faded" from="IntroCutscene" to="." method="_on_intro_cutscene_faded"]

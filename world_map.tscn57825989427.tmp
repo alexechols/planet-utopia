@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmfcq72b70axv"]
+
+[ext_resource type="Script" uid="uid://drvjmykyvl22a" path="res://world_map.gd" id="1_r63r8"]
+[ext_resource type="TileSet" uid="uid://bxloq0d3vvfki" path="res://ground.tres" id="2_deu6t"]
+
+[node name="World Map" type="Node2D"]
+script = ExtResource("1_r63r8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(581, 323)
+
+[node name="Ground" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(-13, -6)
+tile_set = ExtResource("2_deu6t")
+
+[node name="Terrain" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_deu6t")
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(-13, -6)
+tile_set = ExtResource("2_deu6t")
+format = 2
+layer_0/name = "ocean"
+layer_1/name = "shore"
+layer_1/z_index = 1
+layer_2/name = "grass"
+layer_2/z_index = 2
+layer_3/name = "stone"
+layer_3/z_index = 3

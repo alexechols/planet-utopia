@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6vj5poh8kdsk"]
+
+[ext_resource type="FontFile" uid="uid://kqo2s23nxtxs" path="res://assets/kongtext.regular.ttf" id="1_t556v"]
+[ext_resource type="Script" uid="uid://csefpysg6ag4g" path="res://typed_text.gd" id="2_qfcer"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_viipw"]
+font = ExtResource("1_t556v")
+
+[node name="TypedText" type="Label"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Test Text"
+label_settings = SubResource("LabelSettings_viipw")
+script = ExtResource("2_qfcer")
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1sn0c3kkklgo"]
+
+[ext_resource type="TileSet" uid="uid://bxloq0d3vvfki" path="res://ground.tres" id="1_u2c4n"]
+[ext_resource type="Script" uid="uid://dgee6gyekkcoh" path="res://world_grid.gd" id="2_extc3"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = ExtResource("1_u2c4n")
+script = ExtResource("2_extc3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
